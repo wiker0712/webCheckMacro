@@ -1,0 +1,24 @@
+pyinstaller -w -F --add-binary "chromedriver.exe";"." auto.py
+
+
+#pyinstaller
+if  getattr(sys, 'frozen', False): 
+    chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
+    driver = webdriver.Chrome(chromedriver_path)
+else:
+    driver = webdriver.Chrome()
+
+# 옵션 생성
+options = webdriver.ChromeOptions()
+# 창 숨기는 옵션 추가
+options.add_argument("headless")
+# driver 실행
+driver = webdriver.Chrome("./chromedriver",options=options)
+
+ㅡㅡ
+cmd, env=self.env,
+                                            close_fds=system() != 'Windows',
+                                            stdout=self.log_file,
+                                            stderr=self.log_file,
+                                            stdin=PIPE,
+                                            creationflags=self.creationflags
